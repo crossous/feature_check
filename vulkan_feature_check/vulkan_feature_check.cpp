@@ -82,6 +82,11 @@ int main() {
         << VK_VERSION_MINOR(deviceProperties.apiVersion) << "."
         << VK_VERSION_PATCH(deviceProperties.apiVersion) << std::endl;
 
+    // 输出常量缓冲区的限制信息
+    std::cout << "Max Uniform Buffer Range: " << deviceProperties.limits.maxUniformBufferRange << std::endl;
+    std::cout << "Max Push Constants Size: " << deviceProperties.limits.maxPushConstantsSize << std::endl;
+    std::cout << "Max Bound Descriptor Sets: " << deviceProperties.limits.maxBoundDescriptorSets << std::endl;
+
     // 查询物理设备支持的扩展
     uint32_t extensionCount = 0;
     vkEnumerateDeviceExtensionProperties(physicalDevice, nullptr, &extensionCount, nullptr);
@@ -123,6 +128,19 @@ int main() {
         }
 
         std::cout << std::endl;
+    }
+
+    // 查询格式支持情况，例如 VK_FORMAT_R8G8B8A8_UNORM
+    VkFormat format = VK_FORMAT_R8G8B8A8_UNORM;
+    VkFormatProperties formatProperties;
+    vkGetPhysicalDeviceFormatProperties(physicalDevice, format, &formatProperties);
+
+    for (VkFormatFeatureFlagBits featureFlag = VK_FORMAT_FEATURE_SAMPLED_IMAGE_BIT; featureFlag < VK_FORMAT_FEATURE_FLAG_BITS_MAX_ENUM && featureFlag >= VK_FORMAT_FEATURE_SAMPLED_IMAGE_BIT; featureFlag = static_cast<VkFormatFeatureFlagBits>(featureFlag << 1))
+    {
+        if (!magic_enum::enum_contains<VkFormatFeatureFlagBits>(featureFlag))
+            continue;
+
+        std::cout << "Format " << magic_enum::enum_name(featureFlag) << " linear tiling support " << magic_enum::enum_name(featureFlag) << ": " << static_cast<bool>(formatProperties.linearTilingFeatures & featureFlag) << std::endl;
     }
 
     // 清理资源
