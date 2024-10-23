@@ -148,5 +148,6 @@ int main() {
     glfwDestroyWindow(window);
     glfwTerminate();
 
+    system("pause");
     return 0;
 }

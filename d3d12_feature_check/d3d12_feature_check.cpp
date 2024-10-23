@@ -116,5 +116,6 @@ int main() {
     CheckDeviceSupportFeatures(device.Get());
     CheckHardwareSupport(device.Get());
 
+    system("pause");
     return 0;
 }

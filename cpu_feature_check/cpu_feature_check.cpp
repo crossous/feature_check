@@ -173,4 +173,5 @@ void cpu_info_check()
 int main()
 {
     cpu_info_check();
+    system("pause");
 }

@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "d3d12_feature_check", "d3d1
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vulkan_feature_check", "vulkan_feature_check\vulkan_feature_check.vcxproj", "{7793ACA6-6CD4-40C4-8846-B3796A854DD5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gpu_info_check", "gpu_info_check\gpu_info_check.vcxproj", "{DE6247AB-92AC-4704-87FE-0065118CE3EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +53,14 @@ Global
 		{7793ACA6-6CD4-40C4-8846-B3796A854DD5}.Release|x64.Build.0 = Release|x64
 		{7793ACA6-6CD4-40C4-8846-B3796A854DD5}.Release|x86.ActiveCfg = Release|Win32
 		{7793ACA6-6CD4-40C4-8846-B3796A854DD5}.Release|x86.Build.0 = Release|Win32
+		{DE6247AB-92AC-4704-87FE-0065118CE3EC}.Debug|x64.ActiveCfg = Debug|x64
+		{DE6247AB-92AC-4704-87FE-0065118CE3EC}.Debug|x64.Build.0 = Debug|x64
+		{DE6247AB-92AC-4704-87FE-0065118CE3EC}.Debug|x86.ActiveCfg = Debug|Win32
+		{DE6247AB-92AC-4704-87FE-0065118CE3EC}.Debug|x86.Build.0 = Debug|Win32
+		{DE6247AB-92AC-4704-87FE-0065118CE3EC}.Release|x64.ActiveCfg = Release|x64
+		{DE6247AB-92AC-4704-87FE-0065118CE3EC}.Release|x64.Build.0 = Release|x64
+		{DE6247AB-92AC-4704-87FE-0065118CE3EC}.Release|x86.ActiveCfg = Release|Win32
+		{DE6247AB-92AC-4704-87FE-0065118CE3EC}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
