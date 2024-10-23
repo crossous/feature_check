@@ -35,6 +35,12 @@ int main()
     glEnable(GL_DEBUG_OUTPUT);
     glDebugMessageCallback(gl_debug_output, NULL);
 
+    const GLubyte* renderer = glGetString(GL_RENDERER);
+    const GLubyte* version = glGetString(GL_VERSION);
+
+    std::cout << "GPU Renderer: " << renderer << std::endl;
+    std::cout << "OpenGL Version: " << version << std::endl;
+
     int profile;
     glGetIntegerv(GL_CONTEXT_PROFILE_MASK, &profile);
 
@@ -83,9 +89,6 @@ int main()
     std::cout << "error: " << glGetError() << std::endl;
 
     glDeleteTextures(1, &texture);
-
-    const char* version = (const char*)glGetString(GL_VERSION);
-    std::cout << "version: " << version << std::endl;
 
     // glfw: terminate, clearing all previously allocated GLFWresources.
     glfwTerminate();
